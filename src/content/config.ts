@@ -1,22 +1,21 @@
-// 1. Import utilities from `astro:content`
-import { z, defineCollection } from 'astro:content';
-// 2. Define your collection(s)
-const blogCollection = defineCollection({
-  type: 'content',
-  schema: {
-    title: z.string().min(1).max(80),
-    description: z.string().min(1).max(120),
-    tags: z.array(z.string()),
-    date: z.string().min(1).max(120),
-    slug: z.string().min(1).max(120).optional(),
-    thumbnailUrl: z.string().min(1).max(120).optional(),
-    postImageUrl: z.string().min(1).max(120).optional(),
-    postImageUrlWidth: z.number().min(1).max(120).optional(),
-  },
+// Import utilities from `astro:content`
+import { z, defineCollection } from "astro:content";
+// Define a `type` and `schema` for each collection
+const postsCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+      title: z.string(),
+      pubDate: z.date(),
+      description: z.string(),
+      author: z.string(),
+      image: z.object({
+        url: z.string(),
+        alt: z.string()
+      }),
+      tags: z.array(z.string())
+    })
 });
-// 3. Export a single `collections` object to register your collection(s)
-//    This key should match your collection directory name in "src/content"
+// Export a single `collections` object to register your collection(s)
 export const collections = {
-  'blog': blogCollection,
-
+  posts: postsCollection,
 };

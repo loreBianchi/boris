@@ -1,29 +1,50 @@
 ---
 import Layout from "./Layout.astro";
 
+const formatDate = (date: string) => {
+  const d = new Date(date);
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+
 type MarkdownFrontmatter = {
   title: string;
   description: string;
   tags: string[];
-  date: string;
+  pubDate: string;
   slug: string;
-  thumbnailUrl: string;
-  postImageUrl: string;
-  postImageUrlWidth: number;
-}
+  image: {
+    url: string;
+    alt: string;
+  };
+};
 
-export interface Props {
+interface Props {
   frontmatter: MarkdownFrontmatter;
 }
 
-
 const { frontmatter } = Astro.props;
-
 ---
-<Layout title={frontmatter.title}>
-  <h1>{frontmatter.title}</h1>
-  <p>{frontmatter.date}</p>
-  <p><em>{frontmatter.description}</em></p>
-  <img src={frontmatter.postImageUrl} />
-</Layout>
 
+<Layout title={frontmatter.title}>
+  <main>
+    <div class="mx-auto md:max-w-3xl w-full px-10">
+      <a
+      href="/blog"
+      class="mb-5 bg-indigo-900 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-indigo-50 text-white font-semibold h-8 px-6 rounded-lg flex items-center justify-center max-w-fit"
+      >&larr; Blog</a
+    >
+      <h1 class="text-4xl font-bold mb-4">{frontmatter.title}</h1>
+      <p>{formatDate(frontmatter.pubDate)}</p>
+      <p><em>{frontmatter.description}</em></p>
+      <div class="bg-black mb-6">
+        <img src={frontmatter.image.url} />
+      </div>
+
+      <slot />
+    </div>
+  </main>
+</Layout>
