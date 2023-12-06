@@ -1,0 +1,29 @@
+---
+import Layout from "./Layout.astro";
+
+type MarkdownFrontmatter = {
+  title: string;
+  description: string;
+  tags: string[];
+  date: string;
+  slug: string;
+  thumbnailUrl: string;
+  postImageUrl: string;
+  postImageUrlWidth: number;
+}
+
+export interface Props {
+  frontmatter: MarkdownFrontmatter;
+}
+
+
+const { frontmatter } = Astro.props;
+
+---
+<Layout title={frontmatter.title}>
+  <h1>{frontmatter.title}</h1>
+  <p>{frontmatter.date}</p>
+  <p><em>{frontmatter.description}</em></p>
+  <img src={frontmatter.postImageUrl} />
+</Layout>
+

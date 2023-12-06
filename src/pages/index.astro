@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+// import myImage from "../assets/django.png"; 
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <section>
+      <div
+        class="mx-auto max-w-screen-xl px-4 sm:px-6 flex lg:h-full items-center lg:px-8 justify-between sm:flex-row flex-col w-full"
+      >
+        <div class="md:max-w-lg mb-20">
+          <h1 class="md:text-5xl font-extrabold text-3xl">
+            Hello, 🧑🏻‍💻 
+            <strong class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text md:text-5xl font-extrabold text-transparent text-3xl">
+              I'm Lorenzo
+            </strong>
+          </h1>
+          <p class="mt-4 max-w-md sm:text-xl/relaxed">
+            I am a software developer in Bergamo (Italy 🇮🇹). <br />
+             I work mainly in the frontend development area, but I also like the
+            backend part. <br />
+            The programming languages I use and love the most are
+            JS and Python
+          </p>
+        </div>
+        <div class="p-20 md:block hidden">
+          <div class="image-wrapper-2">
+            <div class="image-wrapper-1">
+              <img src="http://placekitten.com/g/310/310" alt="" srcset="" class="clip-path">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    min-height: calc(100vh - 138px);
+  }
+
+  .image-wrapper-1 {
+    background: aquamarine;
+    padding: 20px;
+    border-radius: 100%;
+  }
+
+  .image-wrapper-2 {
+    background: rgb(144, 127, 255);
+    padding: 20px;
+    border-radius: 100%;
+  }
+  .clip-path {
+    clip-path: circle(50% at 50% 50%);
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+</style>
