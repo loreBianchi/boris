@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-// import myImage from "../assets/django.png"; 
+import image from "../assets/boris-1.jpg"; 
 ---
 
 <Layout title="Welcome to Astro.">
@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
       <div
         class="mx-auto max-w-screen-xl px-4 sm:px-6 flex lg:h-full items-center lg:px-8 justify-between sm:flex-row flex-col w-full"
       >
-        <div class="md:max-w-lg mb-20">
+        <div class="md:max-w-lg mb-20 md:mt-0 mt-36">
           <h1 class="md:text-5xl font-extrabold text-3xl">
             Hello, 🧑🏻‍💻 
             <strong class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text md:text-5xl font-extrabold text-transparent text-3xl">
@@ -27,7 +27,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="p-20 md:block hidden">
           <div class="image-wrapper-2">
             <div class="image-wrapper-1">
-              <img src="http://placekitten.com/g/310/310" alt="" srcset="" class="clip-path">
+              <img src={image.src} alt="" srcset="" class="clip-path">
             </div>
           </div>
         </div>
