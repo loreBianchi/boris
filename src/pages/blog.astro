@@ -17,8 +17,7 @@ const allPosts = await getCollection("posts");
       </p>
       <div>
         {allPosts.map((post) => (
-          <BlogItem href={`posts/${post.slug}`} title={post.data.title} description={post.data.description} tags={post.data.tags} author={post.data.author} />
-          
+          <BlogItem href={`posts/${post.slug}`} title={post.data.title} description={post.data.description} tags={post.data.tags} author={post.data.author} />   
         ))}
       </div>
     </div>

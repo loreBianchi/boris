@@ -1,8 +1,5 @@
 ---
-const githubLink = "https://github.com/loreBianchi"
-const githubOldLink = "https://github.com/lorenzobianchi"
-const linkedinLink = "https://www.linkedin.com/in/lorenzo-bianchi-ba6622bb/";
-const twitterLink = "https://twitter.com/loreBianchi";
+import { siteConfig } from '../config'
 ---
 
 <footer class="flex flex-row w-full items-center justify-between px-6 h-[40px]">
@@ -11,7 +8,7 @@ const twitterLink = "https://twitter.com/loreBianchi";
     <!-- github link -->
     <a
       class="mr-5"
-      href={githubLink}
+      href={siteConfig.socialLinks.github}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="GitHub"
@@ -31,7 +28,7 @@ const twitterLink = "https://twitter.com/loreBianchi";
     <!-- github old account link -->
     <a
       class="mr-5"
-      href={githubOldLink}
+      href={siteConfig.socialLinks.github2}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="GitHub"
@@ -51,7 +48,7 @@ const twitterLink = "https://twitter.com/loreBianchi";
     <!-- twitter/x link -->
     <a
       class="mr-5"
-      href={twitterLink}
+      href={siteConfig.socialLinks.twitter}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Twitter"
@@ -71,7 +68,7 @@ const twitterLink = "https://twitter.com/loreBianchi";
     <!-- linkedin link -->
     <a
       class="mr-5"
-      href={linkedinLink}
+      href={siteConfig.socialLinks.linkedin}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="LinkedIn"
@@ -91,7 +88,7 @@ const twitterLink = "https://twitter.com/loreBianchi";
   </div>
   <!-- rss link -->
   <div class="ml-5 text-xs">
-    © <span>2023</span>&nbsp;Lorenzo Bianchi 
+    © <span>2023</span>&nbsp;{siteConfig.name} 
 
     <!-- <a class="social" href="/feed/feed.json">
       RSS

@@ -1,6 +1,7 @@
 ---
+import { siteConfig } from "../config";
 import Layout from "../layouts/Layout.astro";
-import image from "../assets/boris-1.jpg"; 
+import image from "../assets/boris-1.jpg";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,13 +12,13 @@ import image from "../assets/boris-1.jpg";
       >
         <div class="md:max-w-lg mb-20 md:mt-0 mt-36">
           <h1 class="md:text-5xl font-extrabold text-3xl">
-            Hello, 🧑🏻‍💻 
+            Hello, 🐱💻 
             <strong class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text md:text-5xl font-extrabold text-transparent text-3xl">
-              I'm Lorenzo
+              I'm {siteConfig.name}
             </strong>
           </h1>
           <p class="mt-4 max-w-md sm:text-xl/relaxed">
-            I am a software developer in Bergamo (Italy 🇮🇹). <br />
+            I am a cat software developer in Bergamo (Italy 🇮🇹). <br />
              I work mainly in the frontend development area, but I also like the
             backend part. <br />
             The programming languages I use and love the most are
@@ -27,7 +28,7 @@ import image from "../assets/boris-1.jpg";
         <div class="p-20 md:block hidden">
           <div class="image-wrapper-2">
             <div class="image-wrapper-1">
-              <img src={image.src} alt="" srcset="" class="clip-path">
+              <img src={image.src} alt="boris the cat" srcset="" class="clip-path">
             </div>
           </div>
         </div>
